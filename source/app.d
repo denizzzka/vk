@@ -1218,6 +1218,9 @@ ListElement[] GetChat() {
       string unreadSign = e.unread ? getChar("unread") : " ";
       list ~= !e.isName ? ListElement("  " ~ unreadSign ~ e.text) : ListElement(e.text, e.time, null, null, true, -1);
     }
+
+    import vk.images;
+    displayIfPicture(e);
   }
   return list;
 }
